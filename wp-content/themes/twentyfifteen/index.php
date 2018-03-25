@@ -62,7 +62,6 @@
     }
 
     function createAndAppendImageContainer(data, i){
-      console.log(data.caption);
       // create imagecontainer
       let imageContainer = document.createElement('div');
       imageContainer.className = 'image';
