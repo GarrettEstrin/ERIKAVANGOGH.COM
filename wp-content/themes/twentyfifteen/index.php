@@ -5,7 +5,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=600">
+    <meta name="viewport" content="width=900">
     <title>ErkaVanGogh.com</title>
     <meta name="description" content="description here">
     <meta name="keywords" content="keywords,here">
