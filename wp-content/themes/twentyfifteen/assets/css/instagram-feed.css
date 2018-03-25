@@ -1,0 +1,46 @@
+.instafeed {
+  width: 100%;
+  margin: 0 auto;
+}
+.instafeed__row{
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.image {
+  position: relative;
+}
+.image__link {
+
+}
+.image__caption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  opacity: .5;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  top: 0;
+  box-sizing: border-box;
+}
+
+.image__caption-text {
+  color: #fff;
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  align-items: center;
+  margin: 0;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.image:hover > .image__caption,
+.image:hover > .image__caption-text {
+  display: flex;
+}

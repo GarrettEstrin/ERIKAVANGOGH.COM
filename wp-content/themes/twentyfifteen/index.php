@@ -6,10 +6,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=900">
-    <title>ErkaVanGogh.com</title>
+    <title>ErikaVanGogh.com</title>
     <meta name="description" content="description here">
     <meta name="keywords" content="keywords,here">
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory')?>/assets/css/instagram-feed.css">
     <style>
     html, body {
       height: 100%;
@@ -26,33 +27,17 @@
       display: block;
       margin: 0 auto;
     }
-    #instaFeed {
-      margin: 0 auto;
-      width: 100%;
-    }
+    
 
-    #instafeed {
-      width: 100%;
-      margin: 0 auto;
-    }
-    #instafeed-row1, #instafeed-row2{
-      display: flex;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .img-cont {
-      /* width: 16.66666667%; */
-      display: inline-block;
-    }
-    </style>
+  </style>
   </head>
   <body>
   <div class="container">
     <img src="<?php bloginfo('stylesheet_directory')?>/assets/images/logo.png" alt="" class="logo">
   </div>
-  <div id="instafeed">
-    <div id="instafeed-row1"></div>
-    <div id="instafeed-row2"></div>
+  <div id="instafeed" class="instafeed">
+    <div id="instafeed-row1" class="instafeed__row"></div>
+    <div id="instafeed-row2" class="instafeed__row"></div>
   </div>
   <script src="<?php bloginfo('stylesheet_directory')?>/assets/js/instaFeed.js"></script>
   <script>
@@ -65,36 +50,49 @@
         links: true,
         limit: 12,
         mock: true,
-        resolution: 'low_resolution',
         success: handleInstagramImages
     });
     feed.run();
     let feedRow1 = document.getElementById('instafeed-row1');
     let feedRow2 = document.getElementById('instafeed-row2');
     function handleInstagramImages(res){
-      console.log(res.data.length);
       for(let i = 0,c = res.data.length;i<c;i++){
         createAndAppendImageContainer(res.data[i], i);
       }
     }
 
     function createAndAppendImageContainer(data, i){
+      console.log(data.caption);
+      // create imagecontainer
+      let imageContainer = document.createElement('div');
+      imageContainer.className = 'image';
+      // create image
+      let image = document.createElement('img');
+      image.className = 'image__image';
+      image.src = data.images.thumbnail.url;
+      imageContainer.appendChild(image);
+      // create caption element
+      let caption = document.createElement('div');
+      caption.className = 'image__caption';
+      // create text element
+      let text = document.createElement('p');
+      text.className = 'image__caption-text';
+      if(data.caption){
+        text.innerText = data.caption.text;
+      } else {
+        text.innerText = 'erikavangogh';
+      }
+      imageContainer.appendChild(caption);
+      imageContainer.appendChild(text);
+      // create link element
+      let link = document.createElement('a');
+      link.href = data.link
+      link.className = 'image__link';
+      link.appendChild(imageContainer);
       if(i > 5){
-        let imageContainer = document.createElement('div');
-        imageContainer.className = "img-cont";
-        let image = document.createElement('img');
-        image.className = "img-cont__img"
-        image.src = data.images.thumbnail.url;
-        imageContainer.appendChild(image);
-        feedRow2.appendChild(imageContainer);
+        feedRow2.appendChild(link);
       } else  {
-        let imageContainer = document.createElement('div');
-        imageContainer.className = "img-cont";
-        let image = document.createElement('img');
-        image.className = "img-cont__img"
-        image.src = data.images.thumbnail.url;
-        imageContainer.appendChild(image);
-        feedRow1.appendChild(imageContainer);
+        feedRow1.appendChild(link);
       }
     }
   </script>
