@@ -18,6 +18,6 @@
   "homepage": "https://github.com/GarrettEstrin/ERIKAVANGOGH.COM#readme",
   "devDependencies": {
     "dotenv": "^5.0.1",
-    "ftp-deploy-log": "^1.2.71"
+    "ftp-deploy-log": "^1.2.8"
   }
 }
