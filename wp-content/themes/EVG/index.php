@@ -12,14 +12,13 @@
   </head>
   <body>
   <div class="container">
-    <img src="<?php bloginfo('stylesheet_directory')?>/src/assets/images/logo.png" alt="" class="logo">
+    <img data-src="<?php bloginfo('stylesheet_directory')?>/src/assets/images/logo.png" alt="" class="logo lazyload">
   </div>
   <p class="bio"></p>
   <div id="instafeed" class="instafeed">
     <div id="instafeed-row1" class="instafeed__row"></div>
     <div id="instafeed-row2" class="instafeed__row"></div>
   </div>
-  <script src="<?php bloginfo('stylesheet_directory')?>/dist/js/index.js"></script>
-  <!-- <script src="<?php bloginfo('stylesheet_directory')?>/assets/js/instaFeed.js"></script> -->
+  <script src="<?php bloginfo('stylesheet_directory')?>/dist/js/index.js" async></script>
   </body>
 </html>
