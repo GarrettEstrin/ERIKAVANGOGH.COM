@@ -10,31 +10,15 @@
     <meta name="description" content="description here">
     <meta name="keywords" content="keywords,here">
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory')?>/assets/css/common.css">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory')?>/assets/css/instagram-feed.css">
-    <style>
-    html, body {
-      height: 100%;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    .container {
-      text-align: center;
-      display: flex; 
-      align-items:center;
-      width: 100%;
-    }
-    .logo {
-      display: block;
-      margin: 0 auto;
-    }
-    
-
-  </style>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
   <body>
   <div class="container">
     <img src="<?php bloginfo('stylesheet_directory')?>/assets/images/logo.png" alt="" class="logo">
   </div>
+  <p class="bio"></p>
   <div id="instafeed" class="instafeed">
     <div id="instafeed-row1" class="instafeed__row"></div>
     <div id="instafeed-row2" class="instafeed__row"></div>
@@ -94,6 +78,20 @@
         feedRow1.appendChild(link);
       }
     }
+
+    function getBio() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          let data = JSON.parse(this.response);
+
+          document.getElementsByClassName('bio')[0].innerText = data.data.bio;
+        }
+      };
+      xhttp.open("GET", "https://api.instagram.com/v1/users/3263819873/?access_token=12784715.3a81a9f.5698dc3ea8cd4db3922251d364162aaa", true);
+      xhttp.send();
+    }
+    getBio();
   </script>
   </body>
 </html>
