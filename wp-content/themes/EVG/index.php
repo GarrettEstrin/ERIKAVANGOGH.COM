@@ -12,7 +12,8 @@
   </head>
   <body>
   <div class="container">
-    <img data-src="<?php bloginfo('stylesheet_directory')?>/src/assets/images/logo.png" alt="" class="logo lazyload">
+    <img data-src="<?php bloginfo('stylesheet_directory')?>/src/images/logo.png" alt="" class="logo lazyload" id="jsLogo">
+
   </div>
   <p class="bio"></p>
   <div id="instafeed" class="instafeed">

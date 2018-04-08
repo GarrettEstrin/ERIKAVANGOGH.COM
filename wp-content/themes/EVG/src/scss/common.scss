@@ -9,7 +9,7 @@ html, body {
   align-items:center;
   width: 100%;
 }
-.logo {
+.logo, .bio-pic {
   display: block;
   margin: 0 auto;
 }
@@ -18,3 +18,9 @@ html, body {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
+.bio-pic {
+  display: none;
+}
+// .logo:hover {
+//   background-image: url(bio-pic.jpg);
+// }

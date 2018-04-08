@@ -52,14 +52,14 @@ module.exports = env => {
                 plugins: ['transform-runtime']
               }
             },
-            {
-              loader: 'eslint-loader',
-              options: {
-                cache: true,
-                emitWarning: true,
-                configFile: '.eslintrc'
-              }
-            }
+            // {
+            //   loader: 'eslint-loader',
+            //   options: {
+            //     cache: true,
+            //     emitWarning: true,
+            //     configFile: '.eslintrc'
+            //   }
+            // }
           ]
         },
         {
@@ -114,6 +114,12 @@ module.exports = env => {
                     }),
                     postcssReporter({ clearReportedMessages: true }),
                   ]
+                }
+              },
+              {
+                loader: "resolve-url-loader",
+                options: {
+                  sourceMap: true,
                 }
               },
               {

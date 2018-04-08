@@ -65,3 +65,13 @@ xhttp.open("GET", "https://api.instagram.com/v1/users/3263819873/?access_token=1
 xhttp.send();
 }
 getBio();
+
+document.getElementById('jsLogo').addEventListener('mouseover', function(){
+  this.src = '/wp-content/themes/EVG/src/images/bio-pic.jpg';
+  this.height = 500;
+})
+
+document.getElementById('jsLogo').addEventListener('mouseout', function(){
+  this.src = '/wp-content/themes/EVG/src/images/logo.png';
+  this.height = 500;
+})

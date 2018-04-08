@@ -1,3 +1,3 @@
-import './assets/scss/style.scss';
-import './assets/js/feed.js';
-import './assets/js/lazysizes.js';
+import './scss/style.scss';
+import './js/feed.js';
+import './js/lazysizes.js';
