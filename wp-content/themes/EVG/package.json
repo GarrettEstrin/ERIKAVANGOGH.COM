@@ -4,8 +4,20 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "cross-env webpack --progress --env.dev --config webpack.config.js",
-    "s": "nodemon --watch webpack.config.js --exec \"cross-env webpack --progress --env.dev --config webpack.config.js\""
+    "sprites": "npm-run-all --parallel sprites:*",
+    "sprites:png": "spritesmith --rc .spritesmith.js",
+    "clean": "npm-run-all clean:*",
+    "clean:dist": "del-cli dist",
+    "prestart": "npm-run-all --parallel clean sprites",
+    "start:webpack-server": "cross-env webpack-dev-server --open --env.dev",
+    "prebuild": "npm-run-all --parallel clean sprites",
+    "prebuild:prod": "npm-run-all --parallel clean sprites",
+    "build": "cross-env webpack --progress --env.build --config webpack.config.dev.babel.js",
+    "build:prod": "cross-env webpack -p --env.prod --config webpack.config.prod.babel.js",
+    "debug": "cross-env webpack -d --display-error-details --env.dev",
+    "lint:autofix": "stylefmt -c .stylelintrc -r src/scss/**/*.scss && eslint src/js --fix",
+    "postinstall": "del-cli node_modules/**/*.info",
+    "start": "nodemon --watch webpack.config.js --exec \"cross-env webpack --progress --env.dev --config webpack.config.js\""
   },
   "repository": {
     "type": "git",
