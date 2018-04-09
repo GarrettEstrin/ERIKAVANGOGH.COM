@@ -6,14 +6,9 @@ function handleInstagramImages(res){
     createAndAppendImageContainer(el, i);
     i++;
   });
-  // for(let i = 0,c = 12;i<c;i++){
-  //   console.log(res.graphql.user.edge_owner_to_timeline_media.edges);
-  //   createAndAppendImageContainer(res.data[i], i);
-  // }
 }
 
 function createAndAppendImageContainer(data, i){
-  console.log(data);
 // create imagecontainer
 let imageContainer = document.createElement('div');
 imageContainer.className = 'image';
@@ -28,8 +23,9 @@ caption.className = 'image__caption';
 // create text element
 let text = document.createElement('p');
 text.className = 'image__caption-text';
-if(data.caption){
-  text.innerText = data.caption.text;
+let captionText = data.node.edge_media_to_caption.edges;
+if(captionText.length > 0){
+  text.innerText = captionText[0].node.text;
 } else {
   text.innerText = 'erikavangogh';
 }
