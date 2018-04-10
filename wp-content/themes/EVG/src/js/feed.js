@@ -25,7 +25,11 @@ let text = document.createElement('p');
 text.className = 'image__caption-text';
 let captionText = data.node.edge_media_to_caption.edges;
 if(captionText.length > 0){
-  text.innerText = captionText[0].node.text;
+  if(captionText[0].node.text.length > 100){
+    text.innerText = captionText[0].node.text.slice(0, 100) + "...";
+  } else {
+    text.innerText = captionText[0].node.text;
+  }
 } else {
   text.innerText = 'erikavangogh';
 }
@@ -33,7 +37,6 @@ imageContainer.appendChild(caption);
 imageContainer.appendChild(text);
 // create link element
 let link = document.createElement('a');
-console.log(data);
 link.href = 'https://www.instagram.com/p/' + data.node.shortcode;
 link.className = 'image__link';
 link.appendChild(imageContainer);
