@@ -33,7 +33,8 @@ imageContainer.appendChild(caption);
 imageContainer.appendChild(text);
 // create link element
 let link = document.createElement('a');
-link.href = data.link
+console.log(data);
+link.href = 'https://www.instagram.com/p/' + data.node.shortcode;
 link.className = 'image__link';
 link.appendChild(imageContainer);
 if(i > 5){
