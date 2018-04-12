@@ -2,12 +2,17 @@ html, body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  margin: 0;
 }
 .container {
   text-align: center;
   display: flex; 
   align-items:center;
   width: 100%;
+  margin: 0 auto;
+}
+.container--logo {
+  min-height: 400px;
 }
 .logo, .bio-pic {
   display: block;
@@ -17,6 +22,7 @@ html, body {
 .bio {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
+  width: 100%;
 }
 .bio-pic {
   display: none;

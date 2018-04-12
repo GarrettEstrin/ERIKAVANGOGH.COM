@@ -9,17 +9,22 @@
 }
 .image {
   position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 2px;
 }
 .image__image {
-  width: 95%;
+  width: 100%;
+  box-sizing: border-box;
 }
 .image__link {
 
 }
 .image__caption {
   position: absolute;
-  width: 95%;
-  height: 95%;
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
   background-color: grey;
   opacity: .5;
   display: none;
@@ -33,8 +38,10 @@
   color: #fff;
   display: none;
   position: absolute;
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  box-sizing: border-box;
   text-align: center;
   top: 0;
   align-items: center;
@@ -42,8 +49,44 @@
   justify-content: space-around;
   box-sizing: border-box;
   padding: 10px;
+  overflow: hidden;
 }
 .image:hover > .image__caption,
 .image:hover > .image__caption-text {
   display: flex;
+}
+
+// Media Queries
+// Tablet size < 1000 > 400
+@media screen and (max-width: 999px) {
+  .container {
+    width: 700px;
+  }
+  .instafeed__row {
+    flex-wrap: wrap;
+    width: 672px;
+  }
+  .image {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+// Mobile size < 700
+@media screen and (max-width: 499px) {
+  .container {
+    width: 400px;
+  }
+  .logo {
+    max-width: 100%;
+    height: auto;
+  }
+  .image {
+    width: 350px;
+    height: 350px;
+  }
+  .instafeed__row {
+    margin: 0 auto;
+    width: 350px;
+  }
 }
