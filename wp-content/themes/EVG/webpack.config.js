@@ -194,7 +194,7 @@ module.exports = env => {
       // }),
 
       new BrowserSyncPlugin({
-        files: ["dist/**/*.*", "*.php"],
+        files: ["**/**/*.*", "*.php"],
         reloadOnRestart: true,
         proxy: "localhost:8888",
       }),

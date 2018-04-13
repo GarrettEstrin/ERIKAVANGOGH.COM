@@ -11,13 +11,13 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
   <body>
-  <div class="container container--logo">
+  <div class="container--index container--logo">
     <img data-src="<?php bloginfo('stylesheet_directory')?>/src/images/logo.png" alt="" class="logo lazyload" id="jsLogo">
   </div>
-  <div class="container">
+  <div class="container--index">
     <p class="bio"></p>
   </div>
-  <div class="container">
+  <div class="container--index">
     <div id="instafeed" class="instafeed">
       <div id="instafeed-row1" class="instafeed__row"></div>
       <div id="instafeed-row2" class="instafeed__row"></div>
