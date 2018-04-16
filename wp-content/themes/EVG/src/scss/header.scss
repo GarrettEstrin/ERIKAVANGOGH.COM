@@ -1,0 +1,36 @@
+.hdr {
+  background-color: $headerColor;
+  padding: 10px;
+  max-height: 600px;
+  box-sizing: border-box;
+  width: 100%;
+  transition: .5s;
+  z-index: 100;
+  border-bottom: 2px grey solid;
+  // .hdr__logo
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    height: 94%;
+  }
+  .menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  .menu-item {
+    padding: 0 30px;
+  }
+  // .hdr__nav
+  &__nav {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    transition: .5s;
+  }
+  // .hdr__pos 
+  &__pos {
+    margin-top: 175px;
+  }
+}

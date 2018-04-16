@@ -23,7 +23,7 @@ caption.className = 'image__caption';
 // create text element
 let text = document.createElement('p');
 text.className = 'image__caption-text';
-let captionText = data.caption.text;
+let captionText = data.caption.text.replace(/\r?\n|\r/g, '');
 if(captionText.length > 0){
   if(captionText.length > 100){
     text.innerText = captionText.slice(0, 100) + "...";
@@ -64,16 +64,16 @@ function getData(url, use) {
   xhttp.send();
 }
 // make api call for images
-getData('https://api.instagram.com/v1/users/self/media/recent/?access_token=12784715.4cec3d1.f2c07097d4444d8c9aee49f312b96a3d&count=12', 'media');
+getData('https://api.instagram.com/v1/users/self/media/recent/?access_token=2166898.4cec3d1.3f1fcb9e6e464b5b81864fa1abe369c8&count=12', 'media');
 // make api call for user data
-getData('https://api.instagram.com/v1/users/self/?access_token=12784715.4cec3d1.f2c07097d4444d8c9aee49f312b96a3d','bio')
+getData('https://api.instagram.com/v1/users/self/?access_token=2166898.4cec3d1.3f1fcb9e6e464b5b81864fa1abe369c8','bio')
 
 function appendBio(data){
   document.getElementsByClassName('bio')[0].innerText = data.data.bio;
 }
 
 document.getElementById('jsLogo').addEventListener('mouseover', function(){
-  this.src = '/wp-content/themes/EVG/src/images/bio-pic.jpg';
+  this.src = '/wp-content/themes/EVG/src/images/bio-pic.png';
   if(window.innerWidth < 501){
     this.height = 400;
   } else {

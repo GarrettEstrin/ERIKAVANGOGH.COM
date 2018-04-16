@@ -4,6 +4,7 @@ html, body {
   width: 100%;
   box-sizing: border-box;
   margin: 0;
+  font-family: $fontMont;
 }
 .container {
   max-width: 1200px;
@@ -27,11 +28,13 @@ html, body {
 .bio {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  width: 100%;
+  width: 100%;    
+  padding: 0 10px;
 }
 .bio-pic {
   display: none;
 }
-// .logo:hover {
-//   background-image: url(bio-pic.jpg);
-// }
+a {
+  color: inherit;
+  text-decoration: none;
+}

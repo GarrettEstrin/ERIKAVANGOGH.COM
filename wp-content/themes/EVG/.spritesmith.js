@@ -6,7 +6,6 @@ function makeSpriteObj() {
     var pathOptions = [],
         z,
         path = [
-          'index',
         ];
     for (z = 0; z < path.length; z++) {
         pathOptions.push({

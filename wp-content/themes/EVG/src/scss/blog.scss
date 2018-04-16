@@ -1,3 +1,43 @@
 @import 'vars/variables.scss';
 @import 'common.scss';
+@import 'header.scss';
+@import 'footer.scss';
+
+.blog {
+  position: relative;
+  transition: .25s;
+}
+
+.post {
+  padding: 0 25px;
+  // .post__title-cont
+  &__title-cont {
+    display: flex;
+    padding: 10px 0 0;
+    align-items: center;
+  }
+  // .post__title
+  &__title {
+    font-size: 20px;
+  }
+  // .post__info-cont
+  &__info-cont {
+    margin-left: auto;
+  }
+  img {
+    float: left;
+    margin: 10px 10px 10px 0;
+  }
+}
+
+.post-left {
+  img {
+    float: left;
+  }
+}
+.post-right {
+  img {
+    float: right;
+  }
+}
 
