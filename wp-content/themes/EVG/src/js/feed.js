@@ -23,15 +23,18 @@ caption.className = 'image__caption';
 // create text element
 let text = document.createElement('p');
 text.className = 'image__caption-text';
-let captionText = data.caption.text.replace(/\r?\n|\r/g, '');
+if(data.caption){
+  var captionText = data.caption.text.replace(/\r?\n|\r/g, '');
+} else {
+  var captionText = 'erikavangogh';
+}
+
 if(captionText.length > 0){
   if(captionText.length > 100){
     text.innerText = captionText.slice(0, 100) + "...";
   } else {
     text.innerText = captionText;
   }
-} else {
-  text.innerText = 'erikavangogh';
 }
 imageContainer.appendChild(caption);
 imageContainer.appendChild(text);
@@ -64,9 +67,9 @@ function getData(url, use) {
   xhttp.send();
 }
 // make api call for images
-getData('https://api.instagram.com/v1/users/self/media/recent/?access_token=2166898.4cec3d1.3f1fcb9e6e464b5b81864fa1abe369c8&count=12', 'media');
+getData('https://api.instagram.com/v1/users/self/media/recent/?access_token=3263819873.bf1ff69.a62565582a7045fab0d1b00727615349&count=12', 'media');
 // make api call for user data
-getData('https://api.instagram.com/v1/users/self/?access_token=2166898.4cec3d1.3f1fcb9e6e464b5b81864fa1abe369c8','bio')
+getData('https://api.instagram.com/v1/users/self/?access_token=3263819873.bf1ff69.a62565582a7045fab0d1b00727615349','bio')
 
 function appendBio(data){
   document.getElementsByClassName('bio')[0].innerText = data.data.bio;
